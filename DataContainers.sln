@@ -1,7 +1,7 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
-VisualStudioVersion = 17.14.36310.24 d17.14
+VisualStudioVersion = 17.14.36310.24
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DataContainers", "DataContainers\DataContainers.csproj", "{F495F672-B2F8-4F5C-A069-C53B91802887}"
 EndProject
@@ -10,6 +10,8 @@ EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Factorial", "Factorial\Factorial.csproj", "{B7409F0D-C2CA-4417-BF68-FD8CC9585B5F}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FactorialChecked", "FactorialChecked\FactorialChecked.csproj", "{0D842EFE-9A95-4FA8-9841-EE477623480C}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FactorialHW", "FactorialHW\FactorialHW.csproj", "{9F9A7F2F-BA8A-4584-9F3C-D860FF4BD642}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -33,6 +35,10 @@ Global
 		{0D842EFE-9A95-4FA8-9841-EE477623480C}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{0D842EFE-9A95-4FA8-9841-EE477623480C}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{0D842EFE-9A95-4FA8-9841-EE477623480C}.Release|Any CPU.Build.0 = Release|Any CPU
+		{9F9A7F2F-BA8A-4584-9F3C-D860FF4BD642}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{9F9A7F2F-BA8A-4584-9F3C-D860FF4BD642}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{9F9A7F2F-BA8A-4584-9F3C-D860FF4BD642}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{9F9A7F2F-BA8A-4584-9F3C-D860FF4BD642}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
