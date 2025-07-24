@@ -8,7 +8,7 @@ namespace BinaryTree
 {
 	internal class UniqueTree : Tree
 	{
-		public void Insert(int Data, Element Root)
+		public new void Insert(int Data, Element Root)
 		{
 			if (this.Root == null) this.Root = new Element(Data);
 			if (Root == null) return;
@@ -17,11 +17,13 @@ namespace BinaryTree
 				if (Root.pLeft == null) Root.pLeft = new Element(Data);
 				else Insert(Data, Root.pLeft);
 			}
-			else if (Data > Root.Data) 
+			else if (Data > Root.Data)
 			{
 				if (Root.pRight == null) Root.pRight = new Element(Data);
 				else Insert(Data, Root.pRight);
 			}
 		}
+
+		public new void Insert(int Data) => Insert(Data, Root);
 	}
 }

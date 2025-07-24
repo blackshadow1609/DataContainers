@@ -38,8 +38,6 @@ namespace BinaryTree
 		{
 			if (Root == null) return 0;
 			else return Root.pLeft == null ? Root.Data : MinValue(Root.pLeft);
-			//if (Root.pLeft == null) return Root.Data;
-			//else return MinValue(Root.pLeft);
 		}
 		public int MaxValue(Element Root)
 		{
@@ -61,6 +59,67 @@ namespace BinaryTree
 			Print(Root.pLeft);
 			Console.Write(Root.Data + "\t");
 			Print(Root.pRight);
+		}
+
+		public void Insert(int Data) => Insert(Data, Root);
+		public int MinValue() => MinValue(Root);
+		public int MaxValue() => MaxValue(Root);
+		public int Count() => Count(Root);
+		public int Sum() => Sum(Root);
+		public void Print() => Print(Root);
+
+		public void Clear()
+		{
+			Clear(Root);
+			Root = null;
+		}
+
+		private void Clear(Element node)
+		{
+			if (node == null) return;
+			Clear(node.pLeft);
+			Clear(node.pRight);
+			node.pLeft = null;
+			node.pRight = null;
+		}
+
+		public void Erase(int value)
+		{
+			Root = Erase(Root, value);
+		}
+
+		private Element Erase(Element node, int value)
+		{
+			if (node == null) return null;
+
+			if (value < node.Data)
+			{
+				node.pLeft = Erase(node.pLeft, value);
+			}
+			else if (value > node.Data)
+			{
+				node.pRight = Erase(node.pRight, value);
+			}
+			else
+			{
+				if (node.pLeft == null) return node.pRight;
+				if (node.pRight == null) return node.pLeft;
+
+				node.Data = MinValue(node.pRight);
+				node.pRight = Erase(node.pRight, node.Data);
+			}
+			return node;
+		}
+
+		public int Depth()
+		{
+			return Depth(Root);
+		}
+
+		private int Depth(Element node)
+		{
+			if (node == null) return 0;
+			return Math.Max(Depth(node.pLeft), Depth(node.pRight)) + 1;
 		}
 	}
 }
