@@ -8,9 +8,9 @@ namespace BinaryTree
 {
 	internal class Element
 	{
-		public int Data {  get; set; }
-		public Element pLeft {  get; set; }
-		public Element pRight {  get; set; }
+		public int Data { get; set; }
+		public Element pLeft { get; set; }
+		public Element pRight { get; set; }
 
 		public Element(int Data, Element pLeft = null, Element pRight = null)
 		{
