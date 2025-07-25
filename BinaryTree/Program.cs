@@ -1,4 +1,5 @@
 ﻿//BinaryTree
+#define TREE_1
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -11,6 +12,7 @@ namespace BinaryTree
 	{
 		static void Main(string[] args)
 		{
+#if TREE_1
 			Console.Write("Введите размер дерева: ");
 			int n = Convert.ToInt32(Console.ReadLine());
 			Random rand = new Random(0);
@@ -19,12 +21,18 @@ namespace BinaryTree
 			{
 				tree.Insert(rand.Next(100), tree.Root);
 			}
-			tree.Print(tree.Root);
+			//tree.Print(tree.Root);
 			Console.WriteLine();
-			Console.WriteLine($"Минимальное значение в дереве:	{tree.MinValue(tree.Root)}");
-			Console.WriteLine($"Максимальное значение в дереве: {tree.MaxValue(tree.Root)}");
-			Console.WriteLine($"Количество элементов дерева:	{tree.Count(tree.Root)}");
-			Console.WriteLine($"Сумма элементов дерева:			{tree.Sum(tree.Root)}");
+			//Console.WriteLine($"Минимальное значение в дереве:	{tree.MinValue(tree.Root)}");
+			//Console.WriteLine($"Максимальное значение в дереве: {tree.MaxValue(tree.Root)}");
+			//Console.WriteLine($"Количество элементов дерева:	{tree.Count(tree.Root)}");
+			//Console.WriteLine($"Сумма элементов дерева:			{tree.Sum(tree.Root)}");
+
+			TreePerformance<int>.Measure("Минимальное значение в дереве: ", tree.MinValue);
+			TreePerformance<int>.Measure("Минимальное значение в дереве: ", tree.MaxValue);
+			TreePerformance<int>.Measure("Количество элементов дерева: ", tree.Count);
+			TreePerformance<int>.Measure("Сумма элементов дерева: ", tree.Sum);
+			TreePerformance<double>.Measure("Среднее-арифметическое элементов дерева: ", tree.Avg);
 
 			UniqueTree u_tree = new UniqueTree();
 			for (int i = 0; i < n; i++)
@@ -33,11 +41,15 @@ namespace BinaryTree
 			}
 			u_tree.Print(u_tree.Root);
 			Console.WriteLine();
-			Console.WriteLine($"Минимальное значение в дереве:	{u_tree.MinValue(u_tree.Root)}");
-			Console.WriteLine($"Максимальное значение в дереве: {u_tree.MaxValue(u_tree.Root)}");
-			Console.WriteLine($"Количество элементов дерева:	{u_tree.Count(u_tree.Root)}");
-			Console.WriteLine($"Сумма элементов дерева:			{u_tree.Sum(u_tree.Root)}");
+			Console.WriteLine($"Минимальное значение в дереве:	{u_tree.MinValue()}");
+			Console.WriteLine($"Максимальное значение в дереве: {u_tree.MaxValue()}");
+			Console.WriteLine($"Количество элементов дерева:	{u_tree.Count()}");
+			Console.WriteLine($"Сумма элементов дерева:			{u_tree.Sum()}"); 
+#endif
 
+
+			//Tree tree = new Tree() { 50, 25, 75, 16, 32, 70, 80 };
 		}
+		
 	}
 }

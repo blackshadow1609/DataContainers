@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace BinaryTree
 {
-	internal class Tree
+	internal class Tree 
 	{
 		public Element Root { get; protected set; }
 		public Tree()
@@ -18,6 +18,7 @@ namespace BinaryTree
 		{
 			Console.WriteLine($"TDestructor: {GetHashCode()}");
 		}
+		
 
 		public void Insert(int Data, Element Root)
 		{
@@ -34,26 +35,46 @@ namespace BinaryTree
 				else Insert(Data, Root.pRight);
 			}
 		}
-		public int MinValue(Element Root)
+		public int MinValue()
+		{
+			return MinValue(Root);						
+		}
+		int MinValue(Element Root)
 		{
 			if (Root == null) return 0;
 			else return Root.pLeft == null ? Root.Data : MinValue(Root.pLeft);
 			//if (Root.pLeft == null) return Root.Data;
 			//else return MinValue(Root.pLeft);
 		}
-		public int MaxValue(Element Root)
+		public int MaxValue()
+		{
+			return MaxValue(Root);
+		}
+		int MaxValue(Element Root)
 		{
 			if (Root == null) return 0;
 			else return Root.pRight == null ? Root.Data : MaxValue(Root.pRight);
 		}
-		public int Count(Element Root)
+		public int Count()
+		{
+			return Count(Root);
+		}
+		int Count(Element Root)
 		{
 			if (Root == null) return 0;
 			return Root == null ? 0 : Count(Root.pLeft) + Count(Root.pRight) + 1;
 		}
-		public int Sum(Element Root)
+		public int Sum()
+		{
+			return Sum(Root);
+		}
+		int Sum(Element Root)
 		{
 			return Root == null ? 0 : Sum(Root.pLeft) + Sum(Root.pRight) + Root.Data;
+		}
+		public double Avg()
+		{
+			return (double) Sum(Root) / Count();
 		}
 		public void Print(Element Root)
 		{
