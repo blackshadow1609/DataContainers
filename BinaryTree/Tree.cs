@@ -102,15 +102,16 @@ namespace BinaryTree
 		}
 		void DepthPrint(Element Root, int Depth)
 		{
-			if (Root == null) return;
 			int interval = 4 * (this.Depth(this.Root) - Depth);
+			if (Root == null)
+			{
+				//Console.Write("".PadLeft(interval));			
+				Console.Write("".PadLeft(interval));			
+				return;
+			}
 			if (Depth == 0)
 			{
-				//Console.Write(Root.Data.ToString().PadLeft(interval));
-				//PrintInterval(this.Depth(this.Root) - Depth);
-				Console.Write(Root.Data);
-				PrintInterval(this.Depth(this.Root) - Depth);
-				PrintInterval(this.Depth(this.Root) - Depth);
+				Console.Write(Root.Data.ToString().PadLeft(interval));
 			}
 			else
 			{
@@ -122,11 +123,9 @@ namespace BinaryTree
 		{
 			if (Root == null) return;
 			if (this.Depth(this.Root) - Depth == 0) return;
-			//int interval = 4 * (this.Depth() - Depth);
-			//Console.Write("".PadLeft(interval));
+			int interval = 4 * (this.Depth() - Depth);
+			Console.Write("".PadLeft(interval));
 			PrintInterval(this.Depth(this.Root) - Depth);
-			PrintInterval(this.Depth(this.Root) - Depth);
-			//PrintInterval(this.Depth(this.Root) - Depth);
 			DepthPrint(Depth);
 			TreePrint(Depth + 1);
 		}
