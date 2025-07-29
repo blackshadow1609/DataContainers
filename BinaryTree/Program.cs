@@ -50,20 +50,40 @@ namespace BinaryTree
 
 			//Tree tree = new Tree() { 50, 25, 75, 16, 32, 70, 80 };
 			Tree tree = new Tree();
-			tree.Insert(50);
-			tree.Insert(25);
-			tree.Insert(75);
-			tree.Insert(16);
-			tree.Insert(32);
-			tree.Insert(70);
-			tree.Insert(80);
+			//tree.Insert(50);
+			//tree.Insert(25);
+			//tree.Insert(75);
+			//tree.Insert(16);
+			//tree.Insert(32);
+			//tree.Insert(70);
+			//tree.Insert(80);
+
+
+			tree.Insert(55);
+			tree.Insert(34);
+			tree.Insert(21);
+			tree.Insert(13);
+			tree.Insert(8);
+			tree.Insert(5);
+			tree.Insert(3);
+			tree.Insert(2);
+			tree.Insert(1);
+
+
 			tree.Print();
-			Console.WriteLine("\n-------------------------------------------------------\n");
+			Console.WriteLine("\n-------------------------------------------------------------------------\n");
 
 			//tree.DepthPrint(2);
 
 			tree.TreePrint();
+			//tree.Erase(50);
+			tree.Balance();
+			tree.TreePrint();
 		}
-
+		
 	}
+
 }
+
+
+
