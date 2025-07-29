@@ -17,7 +17,6 @@ namespace BinaryTree
 			this.Data = Data;
 			this.pLeft = pLeft;
 			this.pRight = pRight;
-			//Console.WriteLine($"EConstructor: {GetHashCode()}");
 		}
 		~Element()
 		{

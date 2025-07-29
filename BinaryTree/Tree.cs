@@ -72,8 +72,7 @@ namespace BinaryTree
 					}
 				}
 			}
-			//if (Root != null) Erase(Data, Root.pLeft);
-			//if (Root != null) Erase(Data, Root.pRight);
+			
 		}
 		public void Balance()
 		{
@@ -82,8 +81,6 @@ namespace BinaryTree
 		void Balance(Element Root)
 		{
 			if (Root == null) return;
-			//Balance(Root.pLeft);
-			//Balance(Root.pRight);
 			if (Math.Abs(Count(Root.pLeft) - Count(Root.pRight)) < 2) return;
 				if (Count(Root.pLeft) > Count(Root.pRight))
 				{
@@ -113,8 +110,6 @@ namespace BinaryTree
 		{
 			if (Root == null) return 0;
 			else return Root.pLeft == null ? Root.Data : MinValue(Root.pLeft);
-			//if (Root.pLeft == null) return Root.Data;
-			//else return MinValue(Root.pLeft);
 		}
 		public int MaxValue()
 		{
@@ -171,7 +166,6 @@ namespace BinaryTree
 			int interval = BASE_INTERVAL * (this.Depth(this.Root) - Depth);
 			if (Root == null)
 			{
-				//Console.Write("".PadLeft(interval));
 				return;
 			}
 			if (Depth == 0)
